@@ -8,9 +8,9 @@ module.exports = function towelSort (matrix) {
   for(let i=0; i<matrix.length; i++){
     matrix.forEach(x => {
       if (i%2==0){
-        arr = value.concat(x);
+        arr = arr.concat(x);
       } else {
-        arr = value.concat(x.reverse());
+        arr = arr.concat(x.reverse());
       }
     });
   }
