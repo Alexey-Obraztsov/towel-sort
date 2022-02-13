@@ -1,19 +1,19 @@
 module.exports = function towelSort (matrix) {
-  let arr = [];
-
-  if (matrix === undefined){
+  if (matrix === undefined)
     return [];
-  }
 
-  for(let i=0; i<matrix.length; i++){
-    matrix.forEach(x => {
-      if (i%2==0){
-        arr = arr.concat(x);
-      } else {
-        arr = arr.concat(x.reverse());
-      }
-    });
-  }
+  let arr = [];
+  let direction = 0;
 
-return arr;
+  matrix.forEach(x => {
+    if (direction == 1){
+      arr = arr.concat(x.reverse());
+      direction = 0;
+    } else {
+      arr = arr.concat(x);
+      direction = 1;
+    }
+  });
+
+  return arr;
 }
